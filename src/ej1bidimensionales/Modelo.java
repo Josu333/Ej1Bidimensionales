@@ -11,7 +11,7 @@ package ej1bidimensionales;
 public class Modelo {
     private String nombre;
     private int tipo;
-    private float[]ventas;
+    private float[]ventas;//array que alamacena info ventas por mes (6 meses se piden).
 
     public Modelo() {
         ventas=new float[6];
@@ -42,17 +42,19 @@ public class Modelo {
     public float getUnaVenta(int mes){
         return ventas[mes];
     }
-    public void grabar( String nombre, int tipo)
-    {
-        this.nombre=nombre;
-        this.tipo=tipo;
-    }
+   
 
     public void setVentas(float[] ventas) {
         this.ventas = ventas;
     }
     public void setUnaVenta(float venta, int mes){
         ventas[mes]=venta;
+    }
+    
+     public void grabar( String nombre, int tipo)
+    {
+        this.nombre=nombre;
+        this.tipo=tipo;
     }
    
     public float ventasTrimestre(int valor){

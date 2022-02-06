@@ -76,12 +76,12 @@ public class Concesionario {
                 nModelo++) {
             //ventas=new float[6];
             System.out.println("MODELO:" + modelos[nModelo].getNombre());
-            System.out.println("Ventas");
+            System.out.println("VENTAS:");
             for (int mes = 0;
                     mes < modelos[nModelo].getVentas().length;
                     mes++) {
                 importe = Numeros.pedirNumeroReal(
-                        meses[mes] + "\t", 0);
+                        meses[mes] + "\t : ", 0);
                 modelos[nModelo].setUnaVenta(importe, mes);
                 // ventas[mes]= Numero.pedirNumeroReal(
                 //    meses[mes]+"\t",0);
@@ -111,19 +111,19 @@ public class Concesionario {
             System.out.print("\t\t" + modelos[nmodelo].ventasTrimestre(3));
             total = modelos[nmodelo].ventasTrimestre(0)
                     + modelos[nmodelo].ventasTrimestre(3);
-            System.out.print("\t\t" + total);
+            System.out.print("\t" + total);
             fila = modelos[nmodelo].getTipo();
             columna = buscar(total);
-            beneficio = beneficios[fila][columna] * total;
+            beneficio = beneficios[fila][columna] * total;//total ventas(euros) por un porcentaje
             System.out.println("\t" + beneficio);
             linea++;
             
         }
     }
 
-    private int buscar(float importe) {
+    private int buscar(float importeVentas) {
         int pos = 0;
-        while (importe >= limites[pos]) {
+        while (importeVentas >= limites[pos]) {
             pos++;
         }
         /*
@@ -147,8 +147,8 @@ public class Concesionario {
         Fecha fhoy = new Fecha();
 
         System.out.println("INFORME DE VENTAS");
-        System.out.println("Fecha:" + fhoy.fechaCompletaMesLetras()
-        +" Página:"+pagina);
+        System.out.println("Fecha: \t" + fhoy.fechaCompletaMesLetras()
+        +" Página: "+pagina);
         System.out.println("MODELO \t IMPORTE 1TRI\t "
                 + "IMPORTE 2TRI \t TOTAL \t BENEFICIO");
 

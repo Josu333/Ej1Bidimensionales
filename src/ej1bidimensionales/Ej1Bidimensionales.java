@@ -11,9 +11,9 @@ tipo de coche.
 
           IMPORTE VENTAS   15000   30000   50000   100000  +100000
 TURISMO
-Turismo                     15      10      10      18        6
-Deportivo                   18      12      14      20        8
-Todo Terreno                21      14      16      22       10
+Turismo                     15%      10%    10%      18%        6%
+Deportivo                   18%      12%    14%      20%        8%
+Todo Terreno                21%      14%    16%      22%       10%
 
 
                          INFORME DE VENTAS
@@ -35,7 +35,7 @@ public class Ej1Bidimensionales {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Concesionario miEmpresa=new Concesionario(3);
+        Concesionario miEmpresa=new Concesionario(1);
         miEmpresa.crear();
         miEmpresa.pedirDatos();
         miEmpresa.pedirVentasMes();
